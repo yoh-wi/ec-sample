@@ -1,0 +1,72 @@
+// Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+* ::-webkit-scrollbar {
+  display: none;
+}
+
+.main {
+  width: calc( 100% - 150px );
+  height: calc( 100vh - 100px - 70px);
+  background-color: #dcdcdc;
+  float: left;
+  overflow: scroll;
+  &__items {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    &__item {
+      width: 150px;
+      border: solid 1px #c0c0c0;
+      // height: 200px;
+      // align-self: stretch;
+      position: relative;
+      // margin: 5px;
+      &__image {
+        width: 100%;
+        height: 160px;
+      }
+      &__name {
+        padding: 2px;
+        // text-align: center;
+        // letter-spacing: 2px;
+      }
+      &__price {
+        width: 100%;
+        font-size: 16px;
+        text-align: right;
+        padding-right: 5px;
+        padding-bottom: 45px;
+      }
+      &__order {
+        padding: 5px;
+        position: absolute;
+        bottom: 0;
+        // display: flex;
+        &__quantity {
+          width: 50px;
+          font-size: 20px;
+          text-align: center;
+          // padding: 5px 0px;
+        }
+        &__cartin {
+          // color: white;
+          font-weight: bolder;
+          font-size: 18px;
+          text-align: right;
+          background-color: #ffb6c1;
+          padding: 5px;
+          border-radius: 3px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,37 @@
+.item {
+  &__new {
+    padding: 30px;
+    &__title {
+      font-size: 20px;
+    }
+    &__box {
+      width: 700px;
+      padding: 30px;
+      &__input {
+        height: 50px;
+        margin: 10px;
+      }
+      &__submit {
+        text-align: center;        
+      }
+    }
+    &__label {
+      width: 100px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+    }
+    &__field {
+      width: 400px;
+      height: 30px;
+      &__s {
+        width: 50px;
+        height: 30px;
+      }
+      &__m {
+        width: 150px;
+        height: 30px;
+      }
+    }
+  }
+}

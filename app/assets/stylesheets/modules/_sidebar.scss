@@ -1,0 +1,14 @@
+.sidebar {
+  float: left;
+  &__box {
+    width: 150px;
+    height: calc( 100vh - 100px - 70px );
+    background-color: green;
+    &__categories {
+      padding: 20px;
+      &__category {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
