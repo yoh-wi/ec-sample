@@ -1,0 +1,24 @@
+.show
+  - if @cart
+    .cartitems
+      カートの中の商品: #{@cart.length}点  
+    -# 小計: @sum円
+  .show__item
+    .show__item__detail
+      .show__item__detail__name
+        = @item.name
+      .show__item__detail__price
+        = "本体価格  #{@item.price} 円"
+      .show__item__detail__image__box
+        .show__item__detail__image__box__image
+      .show__item__detail__order
+        .show__item__detail__order__box
+          = form_with(url: cartitems_path, local: true) do |f|
+            = f.hidden_field :code, value: @item.code, class: "show__item__detail__order__box__code"
+            = f.hidden_field :name, value: @item.name, class: "show__item__detail__order__box__name"
+            = f.hidden_field :price, value: @item.price, class: "show__item__detail__order__box__price"
+            = f.number_field :quantity, min:"0", max:"10",class: "show__item__detail__order__box__quantity"
+            = f.submit 'カートに入れる', class: "show__item__detail__order__box__cartin"  
+      -# .jsmessage
+      -# - if flash[:notice]
+      -#   = render 'layouts/flash'

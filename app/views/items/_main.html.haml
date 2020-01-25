@@ -9,7 +9,8 @@
     -#   = render 'layouts/flash'
     - @items.each do |item|
       .main__items__item
-        .main__items__item__image
+        .main__items__item__imgbox
+          .main__items__item__imgbox__image
         .main__items__item__name
           = link_to "#{item.name}", item_path(item)
         .main__items__item__price
@@ -21,6 +22,4 @@
             = f.hidden_field :name, value: item.name, class: "main__items__item__order__name"
             = f.hidden_field :price, value: item.price, class: "main__items__item__order__price"
             = f.number_field :quantity, min:"0", max:"10",class: "main__items__item__order__quantity"
-            = f.submit '購入する', class: "main__items__item__order__cartin"
-  .main__admin
-    = link_to "商品登録", new_item_path
+            = f.submit 'カートに入れる', class: "main__items__item__order__cartin"

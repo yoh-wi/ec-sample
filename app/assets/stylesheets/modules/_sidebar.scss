@@ -4,7 +4,9 @@
     width: 150px;
     height: calc( 100vh - 100px - 70px );
     background-color: green;
+    overflow: scroll;
     &__categories {
+      height: 100%;
       padding: 20px;
       &__category {
         margin-bottom: 10px;
