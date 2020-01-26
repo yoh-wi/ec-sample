@@ -1,8 +1,6 @@
 .show
   - if @cart
-    .cartitems
-      カートの中の商品: #{@cart.length}点  
-    -# 小計: @sum円
+    = render "items/calcsum" 
   .show__item
     .show__item__detail
       .show__item__detail__name

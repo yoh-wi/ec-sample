@@ -1,9 +1,5 @@
 .main
-  -# - if @cart.length > 0
-  - if @cart
-    .cartitems
-      カートの中の商品: #{@cart.length}項目  
-  -# 小計: @sum円
+  = render "items/calcsum"
   .main__items
     -# - if flash[:notice]
     -#   = render 'layouts/flash'
@@ -17,7 +13,7 @@
           本体価格<br>
           = "#{item.price} 円"
         .main__items__item__order
-          = form_with(url: cartitems_path, remote: true, class: "main__items__item__order__form") do |f|
+          = form_with(url: cartitems_path, local: true, class: "main__items__item__order__form") do |f|
             = f.hidden_field :code, value: item.code, class: "main__items__item__order__code"
             = f.hidden_field :name, value: item.name, class: "main__items__item__order__name"
             = f.hidden_field :price, value: item.price, class: "main__items__item__order__price"
