@@ -3,6 +3,7 @@
     padding: 30px;
     &__title {
       font-size: 20px;
+      margin-left: 20px;
     }
     &__box {
       width: 700px;
@@ -33,5 +34,17 @@
         height: 30px;
       }
     }
+    &__submit-btn {
+      width: 120px;
+      font-size: 16px;
+      font-weight: bold;
+      background-color: white;
+      border-color:black;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  &__deletelink {
+    text-align: center;
   }
 }

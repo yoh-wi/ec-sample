@@ -1,0 +1,14 @@
+.adheader
+  .adheader__title
+    ECshop管理画面
+  .adheader__nav
+    .adheader__nav__left
+      .adheader__nav__left__list
+        = link_to "受注管理"
+      .adheader__nav__left__list
+        = link_to "商品登録", new_item_path 
+      .adheader__nav__left__list
+        = link_to "商品検索"
+    .adheader__nav__right
+      .redirect__adtop
+        = link_to "管理画面トップへ", new_item_path

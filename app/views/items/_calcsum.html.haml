@@ -1,7 +1,9 @@
 .cartitems
-  - quantity_sum = 0
   - price_sum = 0
-  - @cart.each do |item| 
-    - quantity_sum += item["q"].to_i
-    - price_sum += item["p"].to_i
-  カートの中の商品: #{@cart.length}種、#{quantity_sum}点、小計#{price_sum}円(税抜)  
+  - quantity_sum = 0
+  - @cart.each do |item|
+    - price = item["p"].to_i
+    - quantity = item["q"].to_i
+    - price_sum += price * quantity
+    - quantity_sum += quantity
+  カートの中の商品: #{@cart.length}品目、#{quantity_sum}点、小計#{price_sum}円(税抜)  

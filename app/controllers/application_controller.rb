@@ -12,8 +12,4 @@ class ApplicationController < ActionController::Base
     # @cart = session[:cartitems]
   end
 
-  def cart_params
-    params.permit(:code, :name, :price, :quantity)
-  end
-
 end

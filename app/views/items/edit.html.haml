@@ -1,0 +1,8 @@
+= render "adheader"
+.item__new
+  .item__new__title
+    商品編集
+  = render "itemform"
+  .item__delete
+    %button
+      = link_to '商品を削除する', "/items/#{@item.id}", method: :delete

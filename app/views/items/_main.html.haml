@@ -7,6 +7,7 @@
       .main__items__item
         .main__items__item__imgbox
           .main__items__item__imgbox__image
+          = link_to image_tag("", alt: "#{item.name}"), item_path(item)
         .main__items__item__name
           = link_to "#{item.name}", item_path(item)
         .main__items__item__price
@@ -17,5 +18,5 @@
             = f.hidden_field :code, value: item.code, class: "main__items__item__order__code"
             = f.hidden_field :name, value: item.name, class: "main__items__item__order__name"
             = f.hidden_field :price, value: item.price, class: "main__items__item__order__price"
-            = f.number_field :quantity, min:"0", max:"10",class: "main__items__item__order__quantity"
+            = f.number_field :quantity, min:"1", max:"10",class: "main__items__item__order__quantity"
             = f.submit 'カートに入れる', class: "main__items__item__order__cartin"
