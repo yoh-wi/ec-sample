@@ -5,6 +5,7 @@
   float: left;
   overflow: scroll;
   &__item {
+    height: 100%;
     padding: 20px;
     &__detail {
       width: 600px;

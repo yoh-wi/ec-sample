@@ -1,0 +1,11 @@
+= render "shared/adheader"
+.category
+  .category__registration
+    .category__registration__update
+      部門一覧
+      .category__registration__update__list
+        - @categories.each do |cate|
+          = form_with(url:"" , local:true) do |f|   
+            = f.text_field "#{cate.code}"
+            = f.text_field "#{cate.name}"
+            = f.submit "更新する"

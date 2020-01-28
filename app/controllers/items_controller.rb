@@ -2,17 +2,19 @@ class ItemsController < ApplicationController
   before_action :set_item ,only: [:show, :edit, :update, :destroy]
 
   def index
+    @categories = Category.all
     @item = Item.new
     @items = Item.all
     @cart = session[:cartitems]
   end
 
   def show
-    @item = Item.find(params[:id])
+    @categories = Category.all
     @cart = session[:cartitems]
   end
 
   def new
+    @categories = Category.all
     @item = Item.new
   end
 
@@ -37,6 +39,7 @@ class ItemsController < ApplicationController
   private
   def item_params
     params.require(:item).permit(:categorynumber, :category, :code, :name, :image, :price, :taxrate)
+    # .merge(category_id: )
   end
 
   def set_item

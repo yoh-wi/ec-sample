@@ -1,0 +1,32 @@
+.category {
+  padding: 30px;
+  &__registration {
+    width: 500px;
+    &__input {
+      margin-bottom: 10px;
+    }
+    &__label {
+      width: 100px;
+      display: inline-block;
+      text-align: right;
+      margin-right: 10px;
+    }
+    &__field {
+      width: 400px;
+      height: 30px;
+      &__s {
+        width: 50px;
+        height: 30px;
+      }
+      &__l {
+        width: 300px;
+        height: 30px;
+      }
+    }
+    &__submit {
+      text-align: center;        
+    }
+ 
+    
+  }
+}

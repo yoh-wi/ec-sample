@@ -23,7 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     &__item {
-      width: 180px;
+      min-width: 180px;
       border: solid 1px #c0c0c0;
       // height: 200px;
       align-self: stretch;
@@ -73,6 +73,9 @@
         }
       }
     }
+  }
+  &__category {
+    margin: 5px 10px;
   }
 }
 

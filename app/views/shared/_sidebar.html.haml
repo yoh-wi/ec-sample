@@ -1,11 +1,12 @@
 .sidebar
   .sidebar__box
     .sidebar__box__categories
-      .sidebar__box__categories__category
-        野菜
-      .sidebar__box__categories__category
-        肉
-      .sidebar__box__categories__category
-        玉子
+      - @categories.each do |c|
+        .sidebar__box__categories__category
+          = link_to c.name, category_path(c)
+      -# .sidebar__box__categories__category
+      -#   肉
+      -# .sidebar__box__categories__category
+      -#   玉子
     .sidebar__admin
       = link_to "商品登録", new_item_path
