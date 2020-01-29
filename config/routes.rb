@@ -7,5 +7,6 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
+  # get '/cateindex', to: 'categories#cateindex'
   post '/cartitems', to: 'carts#create'
 end

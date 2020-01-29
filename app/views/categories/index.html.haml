@@ -1,3 +1,12 @@
-= render "shared/header"
-= render "shared/sidebar"
-= render "shared/footer"
+-# = render "shared/header"
+-# = render "shared/sidebar"
+-# = render "shared/footer"
+
+= render "shared/adheader"
+.category
+  .category__registration
+    - @categories.each do |cate|
+      = cate.code
+      = cate.name
+      %button
+        = link_to '編集する', edit_category_path(cate.id)

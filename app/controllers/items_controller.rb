@@ -23,6 +23,7 @@ class ItemsController < ApplicationController
   end
 
   def edit
+    @categories = Category.all
   end
 
   def update
@@ -38,7 +39,7 @@ class ItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:item).permit(:categorynumber, :category, :code, :name, :image, :price, :taxrate)
+    params.require(:item).permit(:categorynumber, :category_id, :code, :name, :image, :price, :taxrate)
     # .merge(category_id: )
   end
 
