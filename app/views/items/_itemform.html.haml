@@ -1,0 +1,25 @@
+.item__new__box
+  = form_with(model: @item, local: true) do |f|
+    -# .item__new__box__input
+    -#   = f.label :categorynumber, "部門番号:", class: 'item__new__label'
+    -#   = f.collection_select :categorynumber, @categories, :id, :code, class: 'item__new__field__s'
+    .item__new__box__input
+      = f.label :category_id, "部門名:", class: 'item__new__label'
+      = f.collection_select :category_id, @categories, :id, :name, include_blank: true, class: 'item__new__field'
+    .item__new__box__input
+      = f.label :code, "商品コード:", class: 'item__new__label'
+      = f.text_field :code, class: 'item__new__field__m'
+    .item__new__box__input
+      = f.label :name, "商品名:", class: 'item__new__label'
+      = f.text_field :name, class: 'item__new__field'
+    .item__new__box__input
+      = f.label :price, "価格:", class: 'item__new__label'
+      = f.text_field :price, class: 'item__new__field__s'
+    .item__new__box__input
+      = f.label :taxrate, "税率:", class: 'item__new__label'
+      = f.text_field :taxrate, class: 'item__new__field__s'
+    .item__new__box__input
+      = f.label :image, "画像:", class: 'item__new__label'
+      = f.file_field :image, class: 'item__new__field__image'
+    .item__new__box__submit
+      = f.submit "保存する", class: 'item__new__submit-btn'

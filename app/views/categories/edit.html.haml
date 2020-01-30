@@ -1,0 +1,13 @@
+= render "shared/adheader"
+.category
+  .category__registration
+    .category__registration__update
+      部門編集
+      .category__registration__update__list
+        = form_with(model: @category , local:true) do |f|   
+          = f.text_field :code, class: "category__registration__field__s"
+          = f.text_field :name, class: "category__registration__field__l"
+          = f.submit "保存する", class: "category__registration__submit-btn"
+          %button
+            = link_to '部門を削除する', "/categories/#{@category.id}", method: :delete
+        

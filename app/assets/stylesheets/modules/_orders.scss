@@ -1,0 +1,45 @@
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.cart {
+  width: calc( 100% - 150px );
+  height: calc( 100vh - 100px - 70px);
+  float: left;
+  overflow: scroll;
+  &__head {
+    padding: 30px;
+    font-size: 26px;
+  }
+  &__items {
+    font-size: 18px;
+    padding: 30px;  
+    &__head {
+      height: 70px;
+      text-align: center;
+      padding: 10px;
+    }
+    &__index {
+      width: 20px;
+      height: 70px;
+      line-height: 70px;
+    }
+    &__name {
+      width: 500px;
+      height: 70px;
+      padding: 10px;
+    }
+    &__price {
+      width: 100px;
+      height: 70px;
+      text-align: right;
+      padding: 10px;
+    }
+    &__quantity {
+      width: 60px;
+      height: 70px;
+      text-align: right;
+      padding: 10px;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+= render "shared/adheader"
+.category
+  .category__title
+    部門新規登録
+  .category__registration
+    = form_with(model: @category, local: true) do |f|
+      .category__registration__input
+        = f.label :code, "部門番号:", class: "category__registration__label"
+        = f.text_field :code, class: "category__registration__field__s"
+      .category__registration__input
+        = f.label :name, "部門名:", class: "category__registration__label"
+        = f.text_field :name, class: "category__registration__field__l"
+      .category__registration__submit
+        = f.submit "保存する", class: "category__registration__submit-btn"
+  .category__edit
+    %button
+      = link_to '部門編集画面へ', "/categories/#{@category.id}"

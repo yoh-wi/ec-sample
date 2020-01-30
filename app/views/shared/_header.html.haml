@@ -1,0 +1,15 @@
+%header 
+  .header
+    .header__left
+      .header__left__title
+        = link_to "ネットショップ", root_path
+    .header__right
+      .header__right__nav
+        %ul
+          %li
+            = link_to "注文に進む", "", class: "cart-btn"
+          %li
+            = link_to "ログイン", class: "header__right__nav__login"
+          %li 
+            = link_to "新規登録", class: "header__right__nav__signup"
+
