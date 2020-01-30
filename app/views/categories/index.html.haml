@@ -5,8 +5,16 @@
 = render "shared/adheader"
 .category
   .category__registration
-    - @categories.each do |cate|
-      = cate.code
-      = cate.name
-      %button
-        = link_to '編集する', edit_category_path(cate.id)
+    部門一覧
+    %table
+      %tr
+        %th 部門番号
+        %th 部門名
+        %th
+      - @categories.each do |cate|
+        %tr
+          %td #{cate.code}
+          %td #{cate.name}
+          %td
+            %button
+              = link_to '編集する', edit_category_path(cate.id), class: "category__registration__submit-btn"

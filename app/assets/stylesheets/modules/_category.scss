@@ -40,6 +40,35 @@
       border-radius: 5px;
       cursor: pointer;
     }
+    & table {
+      margin: 10px;
+      & tr {
+        & th {
+          min-width: 80px;
+          text-align: center;
+        }
+        & td{
+          text-align: center;
+          padding: 5px; 
+        }
+      }
+    }
+    &__update {
+      &__list {
+        width: 700px;
+        padding: 30px;
+        & button {
+          font-size: 16px;
+          border-radius: 5px;
+          text-align: center;
+          background-color: lightgray;
+          & a {
+            color: black;
+            text-decoration: none;
+          }
+        }
+      }
+    }
   }
   &__edit {    
     width: 700px;
