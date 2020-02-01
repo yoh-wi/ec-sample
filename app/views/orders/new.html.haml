@@ -1,0 +1,15 @@
+-# = render 'shared/header'
+.order
+  .order__new
+    .order__new__title
+      注文商品一覧
+    .order__new__items
+      - @cart.each do |item|
+        = item.itemname
+        = item.itemprice
+        = item.quantity
+        = item.item.taxrate
+        %br
+    = form_with(model: @order, local: true) do |f|
+      = f.hidden_field :orderitems, 
+      = f.submit "注文する"
