@@ -10,17 +10,22 @@
     // width: 100%;
     height: 100%;
     &__title {
+      min-width: 200px;
       // color: 
       font-size: 28px;
       font-weight: bold;
-      line-height: 80px;
-    }   
+      line-height: 50px;
+      margin-bottom: 5px;
+    }
+    &__user {
+      margin-left: 10px;
+    }
   }
   &__right {
     
     padding: 20px;    
     &__nav ul {
-      min-width: 200px;
+      min-width: 220px;
       display: flex;
       li {
         background-color: #fff;

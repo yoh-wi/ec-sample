@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+  before_action :configure_permitted_parameters, if: :devise_controller?
   # def cart_create
   #   cartin_item = {n: cart_params[:name], p: cart_params[:price], q: cart_params[:quantity]}.stringify_keys
   #   if session[:cartitems]
@@ -27,5 +27,9 @@ class ApplicationController < ActionController::Base
     cart.orderitems.each do |item|
       orderitems << item
     end
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :address, :telenumber])
   end
 end

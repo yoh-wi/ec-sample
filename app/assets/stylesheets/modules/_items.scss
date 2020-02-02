@@ -10,6 +10,9 @@
   display: none;
 }
 
+.wrapper {
+  min-width: 500px;
+}
 .main {
   width: calc( 100% - 150px );
   // min-width: 450px;

@@ -1,0 +1,12 @@
+.user
+  .user__registration
+    - @users.each do |user|
+      = user.id
+      = user.name
+      = user.email
+      = user.admin
+      - if user.admin == true && user!=current_user
+        = link_to 'Toadminfalse', user_path(user), method: :patch
+      - elsif user.admin == false && user!=current_user
+        = link_to 'Toadmintrue', user_path(user), method: :patch
+      %br

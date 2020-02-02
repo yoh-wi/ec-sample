@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  before_action :move_to_index
 
   def new
     if session[:cart_id]
@@ -24,10 +25,13 @@ class OrdersController < ApplicationController
   private
   
   def order_params
-    params.permit(:username, :orderitems)
+    params.permit(:username, :orderitems).merge(user_id: current_user.id)
   end
 
-  # def add_orderitems_from_cart(cart)
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+    # def add_orderitems_from_cart(cart)
   #   orderitems = []
   #   cart.orderitems.each do |item|
   #     orderitems << item

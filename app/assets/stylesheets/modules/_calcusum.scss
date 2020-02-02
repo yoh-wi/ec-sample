@@ -3,4 +3,15 @@
   line-height: 30px;
   margin: 10px;
   padding: 10px;
+  display: flex;
+  &__output {
+    width: 80%;
+  }
+  &__delete {
+    width: 20%;
+    background-color: #3cb371;
+    padding: 2px;
+    text-align: center;
+    border-radius: 5px;
+  }
 }
