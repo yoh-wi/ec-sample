@@ -1,20 +1,17 @@
 class ItemsController < ApplicationController
-  before_action :set_item ,only: [:show, :edit, :update, :destroy]
-
+  before_action :set_category, only: [:index, :show, :new, :edit]
+  before_action :set_item, only: [:show, :edit, :update]
+  before_action :set_cart, only: [:index, :show]
+  
   def index
-    @categories = Category.all
-    @item = Item.new
+    # @item = Item.new
     @items = Item.all
-    @cart = session[:cartitems]
   end
 
   def show
-    @categories = Category.all
-    @cart = session[:cartitems]
   end
 
   def new
-    @categories = Category.all
     @item = Item.new
   end
 
@@ -23,7 +20,6 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @categories = Category.all
   end
 
   def update
@@ -43,8 +39,19 @@ class ItemsController < ApplicationController
     # .merge(category_id: )
   end
 
+  def set_category
+    @categories = Category.all
+  end
+
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_cart
+    if session[:cart_id]
+      @cart_id = session[:cart_id]
+      @cart = Orderitem.where(cart_id: @cart_id)
+    end
   end
 end
 

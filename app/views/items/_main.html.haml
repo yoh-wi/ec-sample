@@ -1,6 +1,6 @@
 .main
   - if @cart
-    = render "items/calcsum"
+    = render "shared/calcsum"
   .main__items
     -# - if flash[:notice]
     -#   = render 'layouts/flash'
@@ -16,8 +16,9 @@
           = "#{item.price} 円"
         .main__items__item__order
           = form_with(url: cartitems_path, local: true, class: "main__items__item__order__form") do |f|
-            = f.hidden_field :code, value: item.code, class: "main__items__item__order__code"
-            = f.hidden_field :name, value: item.name, class: "main__items__item__order__name"
-            = f.hidden_field :price, value: item.price, class: "main__items__item__order__price"
+            = f.hidden_field :item_id, value: item.id, class: "main__items__item__order__id"
+            = f.hidden_field :itemcode, value: item.code, class: "main__items__item__order__code"
+            = f.hidden_field :itemname, value: item.name, class: "main__items__item__order__name"
+            = f.hidden_field :itemprice, value: item.price, class: "main__items__item__order__price"
             = f.number_field :quantity, min:"1", max:"10",class: "main__items__item__order__quantity"
             = f.submit 'カートに入れる', class: "main__items__item__order__cartin"

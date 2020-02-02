@@ -1,5 +1,6 @@
 .adheader {
   width: 100%;
+  min-width: 750px;
   height: 150px;
   padding: 30px;
   background-color: lightgray;
@@ -9,7 +10,7 @@
     margin-bottom: 20px; 
   }
   &__nav {
-    width: 960px;
+    min-width: 720px;
     font-size: 16px;
     display: flex;
     justify-content: space-between;
@@ -20,6 +21,7 @@
       }
     }
     &__right {
+      margin-right: 10px;
       &__list {
         display: inline-block;
         margin-right: 20px;

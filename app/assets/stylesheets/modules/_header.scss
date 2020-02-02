@@ -1,6 +1,6 @@
 .header {
   width: 100%;
-  min-width: 600px;
+  // min-width: 600px;
   height: 100px;
   background-color: gray;
   padding: 10px 20px;
@@ -17,12 +17,14 @@
     }   
   }
   &__right {
+    
     padding: 20px;    
     &__nav ul {
+      min-width: 200px;
       display: flex;
       li {
         background-color: #fff;
-        font-size: 18px;
+        font-size: 16px;
         border-radius: 3px;
         padding: 10px;
         margin-right: 10px;

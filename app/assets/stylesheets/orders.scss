@@ -1,0 +1,40 @@
+// Place all the styles related to the orders controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.order {
+  &__new {
+    padding: 30px;
+    &__title {
+      font-size: 20px;
+    }
+    &__items {
+      width: 960px;
+      font-size: 18px;
+      margin: 20px;
+      &__name {
+        width: 500px;
+        display: inline-block;
+      }
+      &__price {
+        width: 50px;
+        display: inline-block;
+      }
+      &__quantity {
+        width: 50px;
+        display: inline-block;
+      }
+      &__tax {
+        width: 50px;
+        display: inline-block;
+      }
+    }
+    
+  }
+  // &__item {
+  //   width: 100px;
+  // }
+  // &__price {
+  //   width: 20px;
+  // }
+}
