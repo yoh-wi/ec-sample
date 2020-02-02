@@ -48,8 +48,10 @@ class ItemsController < ApplicationController
   end
 
   def set_cart
-    @cart_id = session[:cart_id]
-    @cart = Orderitem.where(cart_id: @cart_id)
+    if session[:cart_id]
+      @cart_id = session[:cart_id]
+      @cart = Orderitem.where(cart_id: @cart_id)
+    end
   end
 end
 

@@ -1,6 +1,6 @@
 .adheader {
-  // width: 100%;
-  min-width: 500px;
+  width: 100%;
+  min-width: 750px;
   height: 150px;
   padding: 30px;
   background-color: lightgray;
@@ -10,7 +10,7 @@
     margin-bottom: 20px; 
   }
   &__nav {
-    min-width: 500px;
+    min-width: 720px;
     font-size: 16px;
     display: flex;
     justify-content: space-between;

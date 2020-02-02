@@ -21,4 +21,11 @@ class ApplicationController < ActionController::Base
       @cart_id = session[:cart_id]
     end
   end
+
+  def add_orderitems_from_cart(cart)
+
+    cart.orderitems.each do |item|
+      orderitems << item
+    end
+  end
 end

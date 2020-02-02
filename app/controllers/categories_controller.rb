@@ -8,7 +8,9 @@ class CategoriesController < ApplicationController
 
   def show
     # @categories = Category.all
-    @cart = Orderitem.where(cart_id: current_cart)
+    if session[:cart_id]
+      @cart = Orderitem.where(cart_id: current_cart)
+    end
   end
 
   def new

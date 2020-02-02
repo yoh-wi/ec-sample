@@ -1,15 +1,26 @@
--# = render 'shared/header'
+= render 'shared/header'
 .order
   .order__new
     .order__new__title
       注文商品一覧
     .order__new__items
-      - @cart.each do |item|
-        = item.itemname
-        = item.itemprice
-        = item.quantity
-        = item.item.taxrate
-        %br
-    = form_with(model: @order, local: true) do |f|
-      = f.hidden_field :orderitems, 
-      = f.submit "注文する"
+      - if session[:cart_id]
+        - if @cart.length > 0
+          - @cart.each do |item|
+            .order__new__items__name
+              = item.itemname
+            .order__new__items__price
+              = item.itemprice
+            .order__new__items__quantity
+              = item.quantity
+            .order__new__items__tax
+              = item.item.taxrate
+            %br
+          = form_with(url: orders_path, local: true) do |f|
+            = f.text_field :username, value: "サンプル名前"
+            = f.text_field :orderitems, value: @cart
+            = f.submit "注文する"
+        - else 
+          カートに商品がありません。
+      - else
+        カートに商品がありません。

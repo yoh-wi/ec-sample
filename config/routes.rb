@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
   resources :orders
   resources :orderitems
-  
+  post 'orders', to: 'orders#create'
   post 'cartitems', to: 'orderitems#create'
   # get '/cateindex', to: 'categories#cateindex'
   # post '/cartitems', to: 'carts#create'
