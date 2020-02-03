@@ -6,20 +6,45 @@
     .order__new__items
       - if session[:cart_id]
         - if @cart.length > 0
+          - tax0sum = 0
+          - tax8sum = 0
+          - tax10sum = 0
+          - itempqsum = 0
           - @cart.each do |item|
+            - p = item.itemprice
+            - q = item.quantity
+            - itempq = p * q
+            - tax = item.item.taxrate
             .order__new__items__name
               = item.itemname
             .order__new__items__price
-              = item.itemprice
+              #{p}円
             .order__new__items__quantity
-              = item.quantity
+              #{q}個
+            .order__new__items__pq
+              #{itempq}円
             .order__new__items__tax
-              = item.item.taxrate
+              #{tax}％
+            - if tax = 0
+              - tax0sum += itempq  
+            - elsif tax =8
+              - tax8sum += itempq
+            - else
+              - tax10sum += itempq
             %br
+          - itempqsum = tax0sum + tax8sum + tax10sum
+  
+          .order__new__items__name
+          .order__new__items__price
+          .order__new__items__quantity
+          .order__new__items__pq
+            #{itempqsum}円
           = form_with(url: orders_path, local: true) do |f|
-            = f.text_field :username, value: "サンプル名前"
-            = f.text_field :orderitems, value: @cart
-            = f.submit "注文する"
+            = f.label :username, "ご注文者"
+            = f.text_field :username, value: current_user.name + "様", readonly: true
+            = f.hidden_field :orderitems, value: @cart
+            .order__new__items__submit
+              = f.submit "注文する", class: "order__new__items__submit-btn"
         - else 
           カートに商品がありません。
       - else

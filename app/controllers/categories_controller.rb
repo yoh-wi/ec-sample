@@ -43,10 +43,6 @@ class CategoriesController < ApplicationController
     params.require(:category).permit(:code, :name)
   end
 
-  def admin_user
-    redirect_to(root_url) unless current_user.admin?
-  end
-
   def set_category
     @category = Category.find(params[:id])
   end
@@ -55,7 +51,10 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  # def admin_user
+  #   redirect_to(root_url) unless current_user.admin?
+  # end
   def move_to_index
-    redirect_to root_path unless user_signed_in?
+    redirect_to root_path unless user_signed_in? && current_user.admin?
   end
 end

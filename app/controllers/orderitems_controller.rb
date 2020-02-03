@@ -1,5 +1,5 @@
 class OrderitemsController < ApplicationController
-  before_action :move_to_index only: [:create, :destroy]
+  before_action :move_to_index, only: [:create, :destroy]
 
   def create
     current_cart

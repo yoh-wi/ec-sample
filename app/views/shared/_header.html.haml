@@ -8,14 +8,21 @@
           = current_user.name + ' 様'
     .header__right
       .header__right__nav
-        %ul
-          - if user_signed_in?
+        - if user_signed_in?
+          -# 
+          %ul
             %li
               = link_to "注文に進む", new_user_order_path(current_user), class: "cart-btn"
             %li
-              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__nav__logout"
-              
-          - else
+              %span
+                マイページ
+                %ul
+                  %li
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__nav__logout"
+                  %li  
+                    aaaa
+        - else
+          %ul
             %li
               = link_to "ログイン", new_user_session_path, class: "header__right__nav__login"
             %li 
