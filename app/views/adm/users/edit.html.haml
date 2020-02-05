@@ -1,0 +1,11 @@
+.user
+  .user__registration
+    = form_with(model: @user, url: {controller: 'adm/users', action: 'update'}, local: true) do |f|
+      = f.text_field :id, readonly: true
+      = f.text_field :name, readonly: true
+      = f.email_field :email, readonly: true
+      = f.text_field :admin, readonly: true
+      - if @user.admin == true && @user!=current_user
+        = f.submit 'To AdminFalse'
+      - elsif @user.admin == false && @user!=current_user
+        = f.submit 'To AdminTrue'

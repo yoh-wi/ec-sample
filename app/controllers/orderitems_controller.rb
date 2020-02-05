@@ -1,5 +1,10 @@
 class OrderitemsController < ApplicationController
-  before_action :move_to_index, only: [:create, :destroy]
+  before_action :move_to_index, only: [:show, :create, :destroy]
+
+  def index
+    @order = Order.find(params[:order_id])
+    @orderitems = Orderitem.where(order_id: params[:order_id])
+  end
 
   def create
     current_cart
@@ -22,6 +27,6 @@ class OrderitemsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    redirect_to root_path unless user_signed_in?
   end
 end

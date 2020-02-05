@@ -1,9 +1,0 @@
-.user
-  .user__registration
-    - @users.each do |user|
-      = user.id
-      = user.name
-      = user.email
-      = user.admin
-      = link_to '編集する', edit_user_path(user)
-      %br

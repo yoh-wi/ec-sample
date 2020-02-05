@@ -43,3 +43,15 @@
     }
   }
 }
+
+.orders {
+  &__detail {
+    &__delete {
+      padding: 20px;
+      button {
+        width: 150px;
+        height: 30px;        
+      }
+    }
+  }
+}

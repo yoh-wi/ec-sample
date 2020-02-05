@@ -39,7 +39,7 @@
           .order__new__items__quantity
           .order__new__items__pq
             #{itempqsum}円
-          = form_with(url: orders_path, local: true) do |f|
+          = form_with(model: @order, url: {controller: 'orders', action: 'create'}, local: true) do |f|
             = f.label :username, "ご注文者"
             = f.text_field :username, value: current_user.name + "様", readonly: true
             = f.hidden_field :orderitems, value: @cart
