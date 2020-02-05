@@ -49,6 +49,7 @@
           }
           &:hover ul {
             display: block;
+            z-index: 1;
           }
           ul {
             display: none;
@@ -59,7 +60,7 @@
               width: 110px;
               background-color: lightgray;
               border: 1px solid gray;
-              padding: 5px;
+              padding: 2px;
             }
           }
         }

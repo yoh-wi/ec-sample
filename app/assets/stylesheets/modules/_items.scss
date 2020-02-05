@@ -26,6 +26,7 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    // z-index: 0;
     &__item {
       min-width: 180px;
       border: solid 1px #c0c0c0;
