@@ -10,6 +10,9 @@
   display: none;
 }
 
+.wrapper {
+  min-width: 500px;
+}
 .main {
   width: calc( 100% - 150px );
   // min-width: 450px;
@@ -23,6 +26,7 @@
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
+    // z-index: 0;
     &__item {
       min-width: 180px;
       border: solid 1px #c0c0c0;

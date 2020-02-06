@@ -8,5 +8,6 @@
       -#   肉
       -# .sidebar__box__categories__category
       -#   玉子
-    .sidebar__admin
-      = link_to "商品登録", new_item_path
+    - if user_signed_in? && current_user.admin?
+      .sidebar__admin
+        = link_to "商品登録", new_item_path

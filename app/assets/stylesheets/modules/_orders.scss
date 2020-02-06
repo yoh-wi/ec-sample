@@ -43,3 +43,25 @@
     }
   }
 }
+
+.orders {
+  &__detail {
+    padding: 30px;
+    &__title {
+      margin-bottom: 10px;
+    }
+    &__history {
+      button {
+        margin-left: 10px;
+      }
+      
+    }
+    &__delete {
+      padding: 20px;
+      button {
+        width: 150px;
+        height: 30px;        
+      }
+    }
+  }
+}

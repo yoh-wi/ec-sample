@@ -2,7 +2,8 @@ class ItemsController < ApplicationController
   before_action :set_category, only: [:index, :show, :new, :edit]
   before_action :set_item, only: [:show, :edit, :update]
   before_action :set_cart, only: [:index, :show]
-  
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     # @item = Item.new
     @items = Item.all
@@ -52,6 +53,10 @@ class ItemsController < ApplicationController
       @cart_id = session[:cart_id]
       @cart = Orderitem.where(cart_id: @cart_id)
     end
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
   end
 end
 

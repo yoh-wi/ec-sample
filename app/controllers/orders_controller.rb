@@ -1,4 +1,12 @@
 class OrdersController < ApplicationController
+  before_action :move_to_index
+  
+  def index
+    @orders = Order.where(user_id: current_user.id)
+  end
+  
+  def show
+  end
 
   def new
     if session[:cart_id]
@@ -21,12 +29,21 @@ class OrdersController < ApplicationController
     # end
   end
 
+  def destroy
+    @order = Order.find(params[:id])
+    @order.destroy
+    redirect_to user_orders_path(current_user)
+  end
+
   private
   
   def order_params
-    params.permit(:username, :orderitems)
+    params.require(:order).permit(:username, :orderitems).merge(user_id: current_user.id)
   end
 
+  def move_to_index
+    redirect_to root_path unless user_signed_in?
+  end
   # def add_orderitems_from_cart(cart)
   #   orderitems = []
   #   cart.orderitems.each do |item|

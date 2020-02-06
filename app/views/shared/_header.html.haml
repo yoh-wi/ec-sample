@@ -2,14 +2,31 @@
   .header
     .header__left
       .header__left__title
-        = link_to "ネットショップ", root_path
+        = link_to "ネットショップ", root_path 
+      - if user_signed_in?
+        .header__left__user
+          = current_user.name + ' 様'
     .header__right
       .header__right__nav
-        %ul
-          %li
-            = link_to "注文に進む", new_order_path, class: "cart-btn"
-          %li
-            = link_to "ログイン", class: "header__right__nav__login"
-          %li 
-            = link_to "新規登録", class: "header__right__nav__signup"
+        - if user_signed_in?
+          -# 
+          %ul
+            %li
+              = link_to "注文に進む", new_user_order_path(current_user), class: "cart-btn"
+            %li
+              %span
+                マイページ
+                %ul
+                  %li
+                    = link_to "注文履歴", user_orders_path(current_user)
+                  %li
+                    = link_to "アカウント", edit_user_registration_path(current_user)
+                  %li
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__nav__logout"
+        - else
+          %ul
+            %li
+              = link_to "ログイン", new_user_session_path, class: "header__right__nav__login"
+            %li 
+              = link_to "新規登録", new_user_registration_path, class: "header__right__nav__signup"
 

@@ -1,0 +1,15 @@
+.orders
+  .orders__detail
+    .orders__detail__title
+      注文日時
+    .orders__detail__history
+      = @order.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+      %br
+      - @orderitems.each do |orderitem|
+        = orderitem.itemname
+        = orderitem.itemprice
+        = orderitem.quantity
+        %br
+    .orders__detail__delete
+      %button
+        = link_to 'この注文を全削除する', user_order_path(current_user, @order), method: :delete
