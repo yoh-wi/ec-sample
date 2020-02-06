@@ -15,7 +15,6 @@ class OrderitemsController < ApplicationController
 
   def destroy
     @cart_id = session[:cart_id]
-    # @cart = Orderitem.where(cart_id: @cart_id)
     Orderitem.where(cart_id: @cart_id).destroy_all
     redirect_back fallback_location: { action: root_path }
   end
@@ -27,6 +26,8 @@ class OrderitemsController < ApplicationController
   end
 
   def move_to_index
-    redirect_to root_path unless user_signed_in?
+    unless user_signed_in?
+      redirect_back fallback_location: { action: "items" }, notice: 'ログインしてください。'
+    end
   end
 end

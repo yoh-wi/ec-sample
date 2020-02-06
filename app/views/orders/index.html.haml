@@ -4,5 +4,7 @@
       注文履歴
     .orders__detail__history
       - @orders.each do |order|
-        = link_to order.created_at.strftime("%Y/%m/%d(%a) %H:%M"), user_order_orderitems_path(current_user, order) 
+        = order.created_at.strftime("%Y/%m/%d(%a) %H:%M")
+        %button
+          = link_to "詳細", user_order_orderitems_path(current_user, order), class:"orders__detail__history__order"
         %br

@@ -4,11 +4,9 @@ class CategoriesController < ApplicationController
   before_action :move_to_index, except: :show
 
   def index
-    # @categories = Category.all
   end
 
   def show
-    # @categories = Category.all
     if session[:cart_id]
       @cart = Orderitem.where(cart_id: current_cart)
     end
@@ -20,12 +18,10 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.create(category_params)
-    # @categories = Category.all
     render "index"
   end
 
   def edit
-    # @categories = Category.all
   end
 
   def update

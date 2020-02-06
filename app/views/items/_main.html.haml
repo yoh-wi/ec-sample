@@ -1,9 +1,10 @@
 .main
+  - if flash[:notice]
+    = render 'layouts/notification'
   - if @cart
     = render "shared/calcsum"
-  .main__items
-    -# - if flash[:notice]
-    -#   = render 'layouts/flash'
+
+  .main__items 
     - @items.each do |item|
       .main__items__item
         .main__items__item__imgbox

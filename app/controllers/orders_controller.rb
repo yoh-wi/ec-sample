@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
-    # def add_orderitems_from_cart(cart)
+  # def add_orderitems_from_cart(cart)
   #   orderitems = []
   #   cart.orderitems.each do |item|
   #     orderitems << item
