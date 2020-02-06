@@ -23,6 +23,6 @@
       -# .jsmessage
       -# - if flash[:notice]
       -#   = render 'layouts/flash'
-  - if current_user.admin?
+  - if user_signed_in? && current_user.admin?
     .show__item__admin
       = link_to "商品編集", edit_item_path
