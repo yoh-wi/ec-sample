@@ -12,4 +12,6 @@
         %br
     .orders__detail__delete
       %button
+        = link_to '戻る', user_orders_path(current_user)
+      %button
         = link_to 'この注文を全削除する', user_order_path(current_user, @order), method: :delete

@@ -19,10 +19,6 @@
             = f.hidden_field :itemprice, value: @item.price, class: "show__item__detail__order__box__price"
             = f.number_field :quantity, min:"1", max:"10",class: "show__item__detail__order__box__quantity"
             = f.submit 'カートに入れる', class: "show__item__detail__order__box__cartin"  
-
-      -# .jsmessage
-      -# - if flash[:notice]
-      -#   = render 'layouts/flash'
   - if user_signed_in? && current_user.admin?
     .show__item__admin
       = link_to "商品編集", edit_item_path

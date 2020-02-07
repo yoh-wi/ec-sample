@@ -47,9 +47,6 @@ class CategoriesController < ApplicationController
     @categories = Category.all
   end
 
-  # def admin_user
-  #   redirect_to(root_url) unless current_user.admin?
-  # end
   def move_to_index
     redirect_to root_path unless user_signed_in? && current_user.admin?
   end

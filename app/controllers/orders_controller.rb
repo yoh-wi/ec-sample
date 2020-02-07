@@ -23,10 +23,6 @@ class OrdersController < ApplicationController
     @cart.update(order_id: @order.id)
     Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
-    # @order.add_orderitems_from_cart(current_cart)
-    # @order.orderitems.each do |item|
-    #   orderitems << item
-    # end
   end
 
   def destroy
@@ -44,11 +40,5 @@ class OrdersController < ApplicationController
   def move_to_index
     redirect_to root_path unless user_signed_in?
   end
-  # def add_orderitems_from_cart(cart)
-  #   orderitems = []
-  #   cart.orderitems.each do |item|
-  #     orderitems << item
-  #   end
-  # end
 
 end

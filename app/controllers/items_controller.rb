@@ -5,7 +5,6 @@ class ItemsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    # @item = Item.new
     @items = Item.all
   end
 
@@ -29,15 +28,11 @@ class ItemsController < ApplicationController
 
   def destroy
     @item.destroy
-    # if @item.destroy
-    #   redirect_to new_item_path
-    # end
   end
 
   private
   def item_params
     params.require(:item).permit(:category_id, :code, :name, :image, :price, :taxrate)
-    # .merge(category_id: )
   end
 
   def set_category

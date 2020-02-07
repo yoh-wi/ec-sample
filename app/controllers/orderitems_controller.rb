@@ -8,7 +8,6 @@ class OrderitemsController < ApplicationController
 
   def create
     current_cart
-    # @cart_id = session[:cart_id]
     @orderitem = Orderitem.create(orderitem_params)
     redirect_back fallback_location: { action: "items" }, notice: 'カートに追加しました。'
   end
@@ -16,6 +15,8 @@ class OrderitemsController < ApplicationController
   def destroy
     @cart_id = session[:cart_id]
     Orderitem.where(cart_id: @cart_id).destroy_all
+    Cart.destroy(session[:cart_id])
+    session[:cart_id] = nil
     redirect_back fallback_location: { action: root_path }
   end
 

@@ -16,22 +16,3 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :address, :telenumber])
   end
 end 
-  
-  
-  # def cart_create
-  #   cartin_item = {n: cart_params[:name], p: cart_params[:price], q: cart_params[:quantity]}.stringify_keys
-  #   if session[:cartitems]
-  #     session[:cartitems] << cartin_item
-  #   else
-  #     session[:cartitems] = []
-  #     session[:cartitems] << cartin_item
-  #   end
-    # @cart = session[:cartitems]
-  # end
-
-  # def add_orderitems_from_cart(cart)
-
-  #   cart.orderitems.each do |item|
-  #     orderitems << item
-  #   end
-  # end

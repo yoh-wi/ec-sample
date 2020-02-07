@@ -1,8 +1,5 @@
 .item__new__box
   = form_with(model: @item, local: true) do |f|
-    -# .item__new__box__input
-    -#   = f.label :categorynumber, "部門番号:", class: 'item__new__label'
-    -#   = f.collection_select :categorynumber, @categories, :id, :code, class: 'item__new__field__s'
     .item__new__box__input
       = f.label :category_id, "部門名:", class: 'item__new__label'
       = f.collection_select :category_id, @categories, :id, :name, include_blank: true, class: 'item__new__field'
