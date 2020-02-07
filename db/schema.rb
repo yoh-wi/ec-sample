@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_02_150746) do
+ActiveRecord::Schema.define(version: 620200131044356) do
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -25,23 +25,19 @@ ActiveRecord::Schema.define(version: 2020_02_02_150746) do
   end
 
   create_table "items", force: :cascade do |t|
-    t.integer "categorynumber"
-    t.string "category"
-    t.integer "code"
+    t.string "code", null: false
     t.string "name", null: false
     t.string "image"
     t.integer "price", null: false
     t.integer "taxrate"
+    t.integer "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "category_id"
     t.index ["category_id"], name: "index_items_on_category_id"
   end
 
   create_table "orderitems", force: :cascade do |t|
-    t.integer "itemcatecode"
-    t.string "itemcatename"
-    t.integer "itemcode"
+    t.string "itemcode"
     t.string "itemname"
     t.integer "itemprice"
     t.integer "quantity"
@@ -50,7 +46,6 @@ ActiveRecord::Schema.define(version: 2020_02_02_150746) do
     t.integer "order_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["cart_id"], name: "index_orderitems_on_cart_id"
     t.index ["item_id"], name: "index_orderitems_on_item_id"
     t.index ["order_id"], name: "index_orderitems_on_order_id"
   end
@@ -58,10 +53,10 @@ ActiveRecord::Schema.define(version: 2020_02_02_150746) do
   create_table "orders", force: :cascade do |t|
     t.string "username"
     t.string "orderitems"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.index ["orderitems"], name: "index_orders_on_orderitems"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -70,13 +65,14 @@ ActiveRecord::Schema.define(version: 2020_02_02_150746) do
     t.integer "telenumber"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.boolean "admin", default: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["name"], name: "index_users_on_name"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 

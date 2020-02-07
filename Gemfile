@@ -63,6 +63,7 @@ group :test do
 end
 
 group :production do
+  gem 'puma', '~> 3.11'
   gem 'pg'
 end
 

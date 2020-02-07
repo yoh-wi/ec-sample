@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
     @cart = Orderitem.where(cart_id: @cart_id)
     @order = Order.create(order_params)
     @cart.update(order_id: @order.id)
-    # Cart.destroy(session[:cart_id])
+    Cart.destroy(session[:cart_id])
     session[:cart_id] = nil
     # @order.add_orderitems_from_cart(current_cart)
     # @order.orderitems.each do |item|
