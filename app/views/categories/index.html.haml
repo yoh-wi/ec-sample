@@ -1,7 +1,12 @@
 = render "shared/adheader"
 .category
   .category__registration
-    部門一覧
+    - if @category.errors.any?
+      - @category.errors.full_messages.each do |message|
+        = message
+        %br
+    - else
+      部門一覧
     %table
       %tr
         %th 部門番号

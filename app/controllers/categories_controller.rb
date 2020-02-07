@@ -4,6 +4,7 @@ class CategoriesController < ApplicationController
   before_action :move_to_index, except: :show
 
   def index
+    @category = Category.new
   end
 
   def show
