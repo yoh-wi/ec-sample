@@ -36,6 +36,14 @@
         display: inline-block;
         text-align: right;
       }
+      &__all {
+        width: 450px;
+        font-size: 16px;
+        font-weight: bold;
+        display: inline-block;
+        text-align: right;
+        margin-bottom: 5px;
+      }
       &__submit {
         height: 50px;
         text-align: center;

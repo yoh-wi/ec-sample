@@ -2,7 +2,7 @@
   .header
     .header__left
       .header__left__title
-        = link_to "ネットショップ", root_path 
+        = link_to "ネットショップサンプルサイト", root_path 
       - if user_signed_in?
         .header__left__user
           = current_user.name + ' 様'
@@ -23,6 +23,9 @@
                     = link_to "アカウント", edit_user_registration_path(current_user)
                   %li
                     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__nav__logout"
+                  - if current_user.admin?
+                    %li
+                      = link_to "管理者", new_item_path
         - else
           %ul
             %li

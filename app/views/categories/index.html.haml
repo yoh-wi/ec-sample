@@ -1,12 +1,13 @@
 = render "shared/adheader"
 .category
+  - if @category.errors.any?
+    - @category.errors.full_messages.each do |message|
+      = message
+      %br
+  - else
+    部門登録が完了しました。
   .category__registration
-    - if @category.errors.any?
-      - @category.errors.full_messages.each do |message|
-        = message
-        %br
-    - else
-      部門一覧
+    部門一覧
     %table
       %tr
         %th 部門番号

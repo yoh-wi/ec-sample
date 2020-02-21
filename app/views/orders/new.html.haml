@@ -25,20 +25,56 @@
               #{itempq}円
             .order__new__items__tax
               #{tax}％
-            - if tax = 0
+            - if tax == 0
               - tax0sum += itempq  
-            - elsif tax =8
+            - elsif tax == 8
               - tax8sum += itempq
             - else
               - tax10sum += itempq
             %br
           - itempqsum = tax0sum + tax8sum + tax10sum
-  
-          .order__new__items__name
+          - tax8 = (tax8sum * 8/100).floor
+          - tax10 = (tax10sum * 10/100).floor
+          - allsum = itempqsum + tax8 + tax10
+          .order__new__items__all
+            本体価格合計
           .order__new__items__price
           .order__new__items__quantity
           .order__new__items__pq
             #{itempqsum}円
+
+          .order__new__items__all
+            税率8%対象商品金額小計・税額
+          .order__new__items__price
+          .order__new__items__quantity
+          .order__new__items__pq
+            #{tax8sum}円 
+          .order__new__items__tax
+            #{tax8}円
+          .order__new__items__all
+            税率10%対象商品金額小計・税額
+          .order__new__items__price
+          .order__new__items__quantity
+          .order__new__items__pq
+            #{tax10sum}円 
+          .order__new__items__tax
+            #{tax10}円
+          .order__new__items__all
+            非課税対象商品金額小計/税額
+          .order__new__items__price
+          .order__new__items__quantity
+          .order__new__items__pq
+            #{tax0sum}円 
+          .order__new__items__tax
+            0円
+          .order__new__items__all
+            お支払い金額合計
+          .order__new__items__price
+          .order__new__items__quantity
+          .order__new__items__pq
+            #{allsum}円 
+          .order__new__items__tax
+          
           = form_with(model: @order, url: {controller: 'orders', action: 'create'}, local: true) do |f|
             = f.label :username, "ご注文者"
             = f.text_field :username, value: current_user.name + "様", readonly: true

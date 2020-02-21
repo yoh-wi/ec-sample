@@ -1,4 +1,6 @@
 .show
+  - if flash[:notice]
+    = render 'layouts/notification'
   - if @cart
     = render "shared/calcsum" 
   .show__item
