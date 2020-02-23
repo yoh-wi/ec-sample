@@ -1,11 +1,21 @@
-= render 'shared/header'
-.order
+.order  
+  = render 'shared/header'
   .order__new
     .order__new__title
       注文商品一覧
     .order__new__items
       - if session[:cart_id]
         - if @cart.length > 0
+          .order__new__items__name
+            商品名
+          .order__new__items__price
+            価格
+          .order__new__items__quantity
+            数量
+          .order__new__items__pq
+            本体計
+          .order__new__items__tax
+            税率
           - tax0sum = 0
           - tax8sum = 0
           - tax10sum = 0
@@ -35,51 +45,63 @@
           - itempqsum = tax0sum + tax8sum + tax10sum
           - tax8 = (tax8sum * 8/100).floor
           - tax10 = (tax10sum * 10/100).floor
-          - allsum = itempqsum + tax8 + tax10
-          .order__new__items__all
-            本体価格合計
-          .order__new__items__price
-          .order__new__items__quantity
-          .order__new__items__pq
-            #{itempqsum}円
+          - deliveryfee = 440
+          - allsum = itempqsum + tax8 + tax10 + deliveryfee
+          .order__new__items__sumprice  
+            .order__new__items__all
+              本体価格合計
+            .order__new__items__price
+            .order__new__items__quantity
+            .order__new__items__pq
+              #{itempqsum}円
 
-          .order__new__items__all
-            税率8%対象商品金額小計・税額
-          .order__new__items__price
-          .order__new__items__quantity
-          .order__new__items__pq
-            #{tax8sum}円 
-          .order__new__items__tax
-            #{tax8}円
-          .order__new__items__all
-            税率10%対象商品金額小計・税額
-          .order__new__items__price
-          .order__new__items__quantity
-          .order__new__items__pq
-            #{tax10sum}円 
-          .order__new__items__tax
-            #{tax10}円
-          .order__new__items__all
-            非課税対象商品金額小計/税額
-          .order__new__items__price
-          .order__new__items__quantity
-          .order__new__items__pq
-            #{tax0sum}円 
-          .order__new__items__tax
-            0円
-          .order__new__items__all
-            お支払い金額合計
-          .order__new__items__price
-          .order__new__items__quantity
-          .order__new__items__pq
-            #{allsum}円 
-          .order__new__items__tax
-          
-          = form_with(model: @order, url: {controller: 'orders', action: 'create'}, local: true) do |f|
+            .order__new__items__all
+              税率8%対象商品金額小計・税額
+            .order__new__items__price
+            .order__new__items__quantity
+            .order__new__items__pq
+              #{tax8sum}円 
+            .order__new__items__tax
+              #{tax8}円
+            .order__new__items__all
+              税率10%対象商品金額小計・税額
+            .order__new__items__price
+            .order__new__items__quantity
+            .order__new__items__pq
+              #{tax10sum}円 
+            .order__new__items__tax
+              #{tax10}円
+            .order__new__items__all
+              非課税対象商品金額小計・税額
+            .order__new__items__price
+            .order__new__items__quantity
+            .order__new__items__pq
+              #{tax0sum}円 
+            .order__new__items__tax
+              0円
+            .order__new__items__all
+              送料・税額
+            .order__new__items__price
+            .order__new__items__quantity
+            .order__new__items__pq
+              400円 
+            .order__new__items__tax
+              40円
+            .order__new__items__all
+              お支払い金額合計
+            .order__new__items__price
+            .order__new__items__quantity
+            .order__new__items__pq
+              #{allsum}円 
+            .order__new__items__tax
+            
+          = form_with(model: @order, url: {controller: 'orders', action: 'create'}, local: true, class: "order__new__items__form") do |f|
             = f.label :username, "ご注文者"
-            = f.text_field :username, value: current_user.name + "様", readonly: true
+            = f.text_field :username, value: current_user.name + "様", readonly: true, class: "order__new__items__form--name"
             = f.hidden_field :orderitems, value: @cart
             .order__new__items__submit
+              = link_to :back, class: "order__new__items__back" do
+                %button 戻る
               = f.submit "注文する", class: "order__new__items__submit-btn"
         - else 
           カートに商品がありません。

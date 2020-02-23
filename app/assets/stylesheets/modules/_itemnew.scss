@@ -44,6 +44,20 @@
       cursor: pointer;
     }
   }
+  &__delete {    
+    width: 600px;
+    text-align: center;  
+    & button {
+      font-size: 16px;
+      border-radius: 5px;
+      text-align: center;
+      background-color: lightgray;
+      & a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+  }
   &__deletelink {
     width: 600px;
     text-align: center;

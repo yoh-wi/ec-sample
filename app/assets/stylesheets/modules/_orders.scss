@@ -2,72 +2,92 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.cart {
-  width: calc( 100% - 150px );
-  height: calc( 100vh - 100px - 70px);
-  float: left;
-  overflow: scroll;
-  &__head {
-    padding: 30px;
-    font-size: 26px;
-  }
-  &__items {
-    font-size: 18px;
-    padding: 30px;  
-    &__head {
-      height: 70px;
-      text-align: center;
-      padding: 10px;
-    }
-    &__index {
-      width: 20px;
-      height: 70px;
-      line-height: 70px;
-    }
-    &__name {
-      width: 500px;
-      height: 70px;
-      padding: 10px;
-    }
-    &__price {
-      width: 100px;
-      height: 70px;
-      text-align: right;
-      padding: 10px;
-    }
-    &__quantity {
-      width: 60px;
-      height: 70px;
-      text-align: right;
-      padding: 10px;
-    }
-  }
-}
-
-.orders {
-  &__detail {
+.order {
+  width: 100%;
+  min-width: 820px;
+  height: 100%;
+  &__new {
+    width: 100%;
+    height: calc( 100vh - 100px );
+    background-color: lightgray;
     padding: 30px;
     &__title {
-      margin-bottom: 10px;
+      font-size: 20px;
     }
-    &__history {
-      button {
-        margin-left: 10px;
+    &__items {
+      width: 735px;
+      font-size: 16px;
+      margin: 20px;
+      &__name {
+        width: 450px;
+        padding: 0px 5px;
+        display: inline-block;
       }
-      
-    }
-    &__delete {
-      padding: 20px;
-      & button {
-        width: 120px;
-        height: 30px;
-        margin-right: 10px;      
+      &__price {
+        width: 75px;
+        padding: 0px 5px;
+        display: inline-block;
+        text-align: right;
       }
-    }
-    &__returntop {
-      margin: 30px;
-      & button {
-        padding: 5px;
+      &__quantity {
+        width: 60px;
+        padding: 0px 5px;
+        display: inline-block;
+        text-align: right;
+      }
+      &__pq {
+        width: 70px;
+        padding: 0px 5px;
+        display: inline-block;
+        text-align: right;
+      }
+      &__tax {
+        width: 60px;
+        padding: 0px 5px;
+        display: inline-block;
+        text-align: right;
+      }
+      &__sumprice {
+        border-top: solid 2px;
+      }
+      &__all {
+        width: 450px;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 0px 5px;
+        display: inline-block;
+        text-align: right;
+        margin-bottom: 5px;
+      }
+      &__form {
+        margin-top: 20px;
+        &--name {
+          width: 150px;
+          padding: 0px 5px;
+          text-align: right;
+        }
+      }
+      &__submit {
+        height: 20px;
+        text-align: center;
+        margin: 20px;
+      }
+      &__back {
+        margin-right: 20px; 
+        button {
+          font-size: 12px;
+          border-radius: 5px;
+          vertical-align: bottom;
+          cursor: pointer;
+        }
+      }
+      &__submit-btn {
+        width: 100px;
+        height: 50px;
+        font-size: 16px;
+        padding: 30px;
+        background-color: #fff;
+        cursor: pointer;
       }
     }
   }
