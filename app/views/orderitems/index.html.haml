@@ -5,10 +5,11 @@
     .orders__detail__history
       = @order.created_at.strftime("%Y/%m/%d(%a) %H:%M")
       %br
+      %br
       - @orderitems.each do |orderitem|
         = orderitem.itemname
-        = orderitem.itemprice
-        = orderitem.quantity
+        #{orderitem.itemprice}円
+        #{orderitem.quantity}個
         %br
     .orders__detail__delete
       %button

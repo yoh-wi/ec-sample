@@ -15,7 +15,7 @@
       font-size: 20px;
     }
     &__items {
-      width: 735px;
+      width: 775px;
       font-size: 16px;
       margin: 20px;
       &__name {
@@ -24,25 +24,25 @@
         display: inline-block;
       }
       &__price {
-        width: 75px;
+        width: 80px;
         padding: 0px 5px;
         display: inline-block;
         text-align: right;
       }
       &__quantity {
-        width: 60px;
-        padding: 0px 5px;
-        display: inline-block;
-        text-align: right;
-      }
-      &__pq {
         width: 70px;
         padding: 0px 5px;
         display: inline-block;
         text-align: right;
       }
+      &__pq {
+        width: 80px;
+        padding: 0px 5px;
+        display: inline-block;
+        text-align: right;
+      }
       &__tax {
-        width: 60px;
+        width: 70px;
         padding: 0px 5px;
         display: inline-block;
         text-align: right;
