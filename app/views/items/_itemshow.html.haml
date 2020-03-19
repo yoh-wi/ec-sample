@@ -10,8 +10,7 @@
       .show__item__detail__price
         = "本体価格  #{@item.price} 円"
       .show__item__detail__image__box
-        .show__item__detail__image__box__image
-          = image_tag("", alt: "#{@item.name}")
+        = image_tag @item.image.url, alt: @item.name, class: "show__item__detail__image__box__image" if @item.image.present?
       .show__item__detail__order
         .show__item__detail__order__box
           = form_with(url: cartitems_path, local: true) do |f|

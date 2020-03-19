@@ -5,4 +5,6 @@ class Item < ApplicationRecord
   validates :code, presence: true, uniqueness: true, length: { maximum:13 } 
   validates :name, presence: true
   validates :price, presence: true
+
+  mount_uploader :image, ImageUploader
 end

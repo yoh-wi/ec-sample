@@ -6,9 +6,9 @@
   .main__items
     - @category.items.each do |item|
       .main__items__item
-        .main__items__item__imgbox
-          .main__items__item__imgbox__image
-            = link_to image_tag("", alt: "#{item.name}"), item_path(item)
+        = link_to item_path(item) do
+          .main__items__item__imgbox
+            = image_tag item.image.url, alt: item.name, class: "main__items__item__imgbox__image" if item.image.present?
         .main__items__item__name
           = link_to "#{item.name}", item_path(item)
         .main__items__item__price
