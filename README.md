@@ -27,10 +27,10 @@ Things you may want to cover:
 ECサイトの作成し、簡単な購入機能を再現してみたいと思ったため
 
 #### 作成ポイント
-* カートに商品を入れた時 → cartsテーブルのidを作成し、sessionに保存
+* カートに商品を入れた時 → cartsテーブルのidを作成し、sessionに保存、
                     orderitemsテーブルに商品を保存
-* 注文が完了した時 → ordersテーブルに注文者の情報を保存
-                orderitemsテーブルのoreder_idカラムに該当orderidを保存
+* 注文が完了した時 → ordersテーブルに注文者の情報を保存、
+                orderitemsテーブルのoreder_idカラムに該当orderidを保存、
                 cartsテーブルのレコードを削除
 * 様々なサイトを参考にさせていただきながら、プログラムを組み立てました。
 
