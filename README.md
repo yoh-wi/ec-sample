@@ -5,29 +5,29 @@ application up and running.
 
 Things you may want to cover:
 
-* アプリ名
-ネットショップ サンプルサイト
+### アプリ名
+* ネットショップ サンプルサイト
 
-* アプリの概要
-プログラミング学習のために個人で作成したECサイトです。
-商品をカートに入れ、購入する体験ができます。
+### アプリの概要
+* プログラミング学習のために個人で作成したECサイトです。
+* 商品をカートに入れ、購入する体験ができます。
 
-* URL
-  https://frozen-lake-44832.herokuapp.com/
+### URL
+* https://frozen-lake-44832.herokuapp.com/
 
-  テストID: test@test.com
-  テストPW: test1234
+* テストID: test@test.com
+* テストPW: test1234
 
 * Ruby version
-  2.5.1
+* 2.5.1
 
 * Rails version
-  5.2.4.1
+* 5.2.4.1
 
 * 制作背景
-  ECサイトの作成し、簡単な購入機能を再現してみたいと思ったため
+* ECサイトの作成し、簡単な購入機能を再現してみたいと思ったため
 
-* DB設計
+## DB設計
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
