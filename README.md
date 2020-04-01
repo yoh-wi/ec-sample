@@ -26,6 +26,15 @@ Things you may want to cover:
 #### 制作背景
 ECサイトの作成し、簡単な購入機能を再現してみたいと思ったため
 
+#### 作成ポイント
+カートに商品を入れた時 → cartsテーブルのidを作成し、sessionに保存
+                    orderitemsテーブルに商品を保存
+注文が完了した時 → ordersテーブルに注文者の情報を保存
+                orderitemsテーブルのoreder_idカラムに該当orderidを保存
+                cartsテーブルのレコードを削除
+
+様々なサイトを参考にさせていただきながら、プログラムを組み立てました。
+
 ## DB設計
 ## usersテーブル
 |Column|Type|Options|
@@ -87,12 +96,3 @@ ECサイトの作成し、簡単な購入機能を再現してみたいと思っ
 ### Association
 - has_many :orderitem, dependent: :destroy
 - belongs_to :user
-
-#### 作成ポイント
-カートに商品を入れた時 → cartsテーブルのidを作成し、sessionに保存
-                    orderitemsテーブルに商品を保存
-注文が完了した時 → ordersテーブルに注文者の情報を保存
-                orderitemsテーブルのoreder_idカラムに該当orderidを保存
-                cartsテーブルのレコードを削除
-
-様々なサイトを参考にさせていただきながら、プログラムを組み立てました。
