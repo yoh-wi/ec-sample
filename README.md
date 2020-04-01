@@ -5,27 +5,27 @@ application up and running.
 
 Things you may want to cover:
 
-### アプリ名
+#### アプリ名
 * ネットショップ サンプルサイト
 
-### アプリの概要
+#### アプリの概要
 * プログラミング学習のために個人で作成したECサイトです。
-* 商品をカートに入れ、購入する体験ができます。
+  商品をカートに入れ、購入する体験ができます。
 
-### URL
+#### URL
 * https://frozen-lake-44832.herokuapp.com/
 
-* テストID: test@test.com
-* テストPW: test1234
+テストID:  test@test.com
+テストPW:  test1234
 
-* Ruby version
-* 2.5.1
+#### Ruby version  
+2.5.1
 
-* Rails version
-* 5.2.4.1
+#### Rails version
+5.2.4.1
 
-* 制作背景
-* ECサイトの作成し、簡単な購入機能を再現してみたいと思ったため
+#### 制作背景
+ECサイトの作成し、簡単な購入機能を再現してみたいと思ったため
 
 ## DB設計
 ## usersテーブル
@@ -89,11 +89,11 @@ Things you may want to cover:
 - has_many :orderitem, dependent: :destroy
 - belongs_to :user
 
-* 作成ポイント
-カートに商品を入れる → cartsテーブルのidを作成し、sessionに保存
+#### 作成ポイント
+カートに商品を入れた時 → cartsテーブルのidを作成し、sessionに保存
                     orderitemsテーブルに商品を保存
-注文が完了 → ordersテーブルに注文者の情報を保存
-           orderitemsテーブルのoreder_idカラムに該当orderidを保存
-           cartsテーブルのレコードを削除
+注文が完了した時 → ordersテーブルに注文者の情報を保存
+                orderitemsテーブルのoreder_idカラムに該当orderidを保存
+                cartsテーブルのレコードを削除
 
-様々なサイトを参考させていただきながら、プログラムを組み立てました。
+様々なサイトを参考にさせていただきながら、プログラムを組み立てました。
