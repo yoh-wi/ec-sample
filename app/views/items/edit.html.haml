@@ -5,4 +5,4 @@
   = render "itemform"
   .item__delete
     %button
-      = link_to '商品を削除する', "/items/#{@item.id}", method: :delete
+      = link_to '商品を削除する', item_path(@item), method: :delete
