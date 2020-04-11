@@ -10,6 +10,9 @@
       padding: 20px;
       &__category {
         margin-bottom: 10px;
+        .category-line {
+          display: block;
+        }
       }
     }
   }

@@ -3,7 +3,7 @@
     .sidebar__box__categories
       - @categories.each do |c|
         .sidebar__box__categories__category
-          = link_to c.name, category_path(c)
+          = link_to c.name, category_path(c), class: "category-line"
     -# - if user_signed_in? && current_user.admin?
     -#   .sidebar__admin
     -#     = link_to "商品登録", new_item_path

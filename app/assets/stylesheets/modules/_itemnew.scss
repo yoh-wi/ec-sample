@@ -12,8 +12,31 @@
         height: 50px;
         margin: 10px;
       }
+      &__image {
+        height: 50px;
+        margin: 10px;
+        &--view {
+          width: 75px;
+          height: 50px;
+          object-fit: cover;
+          vertical-align: middle;
+        }
+        &--file {
+          display: none;
+        }
+      }
       &__submit {
-        text-align: center;        
+        text-align: center;
+        &--btn {
+          margin-top: 10px;
+          width: 120px;
+          font-size: 16px;
+          font-weight: bold;
+          background-color: white;
+          border-color:black;
+          border-radius: 5px;
+          cursor: pointer;
+        }
       }
     }
     &__label {
@@ -34,15 +57,6 @@
         height: 30px;
       }
     }
-    &__submit-btn {
-      width: 120px;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: white;
-      border-color:black;
-      border-radius: 5px;
-      cursor: pointer;
-    }
   }
   &__delete {    
     width: 600px;
@@ -53,6 +67,7 @@
       text-align: center;
       background-color: lightgray;
       & a {
+        display: block;
         color: black;
         text-decoration: none;
       }
