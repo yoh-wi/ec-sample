@@ -11,6 +11,10 @@
       &__input {
         height: 50px;
         margin: 10px;
+        select {
+          height: 30px;
+          border-radius: 0px;
+        }
       }
       &__image {
         height: 50px;
@@ -48,13 +52,16 @@
     &__field {
       width: 400px;
       height: 30px;
+      padding-left: 5px;
       &__s {
-        width: 50px;
+        width: 70px;
         height: 30px;
+        padding-left: 5px;
       }
       &__m {
-        width: 150px;
+        width: 160px;
         height: 30px;
+        padding-left: 5px;
       }
     }
   }

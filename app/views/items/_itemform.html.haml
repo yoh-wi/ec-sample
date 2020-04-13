@@ -17,9 +17,9 @@
       = f.text_field :taxrate, class: 'item__new__field__s'
     .item__new__box__image
       = f.label :image, "画像:", class: 'item__new__label'
-      %label  
+      %label#image-view
         - if @item.image.present?
           = image_tag @item.image.url, class: 'item__new__box__image--view'
         = f.file_field :image, class: 'item__new__box__image--file'
     .item__new__box__submit
-      = f.submit "保存する", class: 'item__new__box__submit--btn'
+      = f.submit "保存する", class: 'item__new__box__submit--btn', id: 'wwwww'
