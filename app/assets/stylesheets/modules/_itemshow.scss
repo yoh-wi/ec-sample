@@ -19,6 +19,9 @@
         font-size: 25px;
         margin-right: 70px;
         text-align: right;
+        span {
+          font-weight: bold;
+        }
       }
       &__image__box {
         width: 400px;

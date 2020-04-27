@@ -8,7 +8,8 @@
       .show__item__detail__name
         = @item.name
       .show__item__detail__price
-        = "本体価格  #{@item.price} 円"
+        本体価格 :
+        %span #{@item.price} 円
       .show__item__detail__image__box
         = image_tag @item.image.url, alt: @item.name, class: "show__item__detail__image__box__image" if @item.image.present?
       .show__item__detail__order

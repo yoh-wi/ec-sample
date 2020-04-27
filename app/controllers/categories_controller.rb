@@ -19,7 +19,8 @@ class CategoriesController < ApplicationController
 
   def create
     @category = Category.create(category_params)
-    render "index"
+    redirect_to categories_path, notice: '部門登録が完了しました。'
+    # render "index", notice: '部門登録が完了しました。'
   end
 
   def edit
@@ -28,7 +29,7 @@ class CategoriesController < ApplicationController
   def update
     category = Category.find(params[:id])
     category.update(category_params)
-    redirect_to categories_path
+    redirect_to categories_path, notice: '部門編集が完了しました'
   end
 
   def destroy

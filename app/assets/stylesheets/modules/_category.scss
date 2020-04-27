@@ -22,10 +22,13 @@
       &__s {
         width: 50px;
         height: 30px;
+        text-align: right;
+        padding-right: 5px;
       }
       &__l {
         width: 300px;
         height: 30px;
+        padding-left: 5px;
       }
     }
     &__submit {

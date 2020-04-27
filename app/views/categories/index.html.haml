@@ -5,7 +5,8 @@
       = message
       %br
   - else
-    部門登録が完了しました。
+    - if flash[:notice]
+      = render 'layouts/notification'
   .category__registration
     部門一覧
     %table

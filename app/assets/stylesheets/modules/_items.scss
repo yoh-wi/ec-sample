@@ -58,6 +58,10 @@
         text-align: right;
         padding-right: 5px;
         padding-bottom: 45px;
+        span {
+          color: #8b0000;
+          font-weight: bold;
+        }
       }
       &__order {
         padding: 5px;

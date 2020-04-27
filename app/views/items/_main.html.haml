@@ -14,7 +14,8 @@
             = link_to "#{item.name}", item_path(item)
         .main__items__item__price
           本体価格<br>
-          = "#{item.price} 円"
+          %span
+            = "#{item.price} 円"
         .main__items__item__order
           = form_with(url: cartitems_path, local: true, class: "main__items__item__order__form") do |f|
             = f.hidden_field :item_id, value: item.id, class: "main__items__item__order__id"
