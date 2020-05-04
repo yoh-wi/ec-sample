@@ -2,8 +2,9 @@ class OrderitemsController < ApplicationController
   before_action :move_to_index, only: [:show, :create, :destroy]
 
   def index
-    @order = Order.find(params[:order_id])
-    @orderitems = Orderitem.where(order_id: params[:order_id])
+    # @order = Order.find(params[:order_id])
+  #   @orderitems = Orderitem.where(order_id: params[:order_id])
+    @orderitems = Orderitem.all
   end
 
   def create

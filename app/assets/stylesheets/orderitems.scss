@@ -1,3 +1,28 @@
 // Place all the styles related to the orderitems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.orderitems {
+  padding: 50px;
+  &__detail {
+    margin: 20px auto;
+    &--code {
+      width: 200px;
+    }
+    &--name {
+      width: 500px;
+    }
+    &--price {
+      width: 100px;
+    }
+    &--quantity {
+      width: 70px;
+    }
+    &--orderid {
+      width: 100px;
+    }
+  }
+  &__list {
+    font-size: 20px;
+  }
+}

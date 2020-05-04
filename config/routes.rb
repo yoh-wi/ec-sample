@@ -3,13 +3,13 @@ Rails.application.routes.draw do
   root to: 'items#index'
   resources :users, only: [:index, :show, :edit, :update] do
     resources :orders do
-      resources :orderitems, only: :index
     end
   end
+  resources :orderitems, only: :index
   namespace :adm do
-    resources :users do
-      resources :orders
-    end
+    resources :users
+    resources :orders
+    resources :orderitems, only: :index
   end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
@@ -19,7 +19,8 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  
+  # resources :orders
+  # resources :orderitems, only: :index
   
   post 'orders', to: 'orders#create'
   post 'cartitems', to: 'orderitems#create'

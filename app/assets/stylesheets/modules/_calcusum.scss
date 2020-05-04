@@ -1,18 +1,27 @@
 .cartitems {
+  min-width: 300px;
   background-color: white;
   line-height: 30px;
   margin: 10px;
   padding: 10px;
   display: flex;
+  position: relative;
   &__output {
-    width: 80%;
+    width: calc( 100% - 150px );
+    min-width: 150px;
   }
   &__delete {
     width: 20%;
+    min-width: 150px;
+    height: 35px;
     background-color: #3cb371;
     padding: 2px;
     text-align: center;
+    vertical-align: top;
     border-radius: 5px;
+    position: absolute;
+    bottom: 15%;
+    right: 10px;
     a {
       display: block;
     }

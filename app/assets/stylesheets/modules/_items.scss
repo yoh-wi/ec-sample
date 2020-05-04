@@ -91,6 +91,12 @@
   &__category {
     margin: 5px 10px;
   }
+  .notification {
+    .notice {
+      background-color: pink;
+      text-align: center;
+    }
+  }
 }
 
 a {
