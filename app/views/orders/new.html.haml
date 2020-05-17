@@ -99,6 +99,7 @@
             = f.label :username, "ご注文者"
             = f.text_field :username, value: current_user.name + "様", readonly: true, class: "order__new__items__form--name"
             = f.hidden_field :orderitems, value: @cart
+            = f.hidden_field :priceSum, value: allsum
             .order__new__items__submit
               = link_to :back, class: "order__new__items__back" do
                 %button 戻る

@@ -14,6 +14,14 @@ class OrdersController < ApplicationController
     if session[:cart_id]
       @cart_id = session[:cart_id]
       @cart = Orderitem.where(cart_id: @cart_id)
+      if Card.exists?(user_id: current_user.id)
+        card = Card.find_by(user_id: current_user.id)
+        Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
+        customer = Payjp::Customer.retrieve(card.customer_id)
+        @default_card_information = customer.cards.retrieve(card.card_id)
+      else
+        redirect_to new_card_path
+      end
     end
       @order = Order.new
   end
@@ -21,6 +29,13 @@ class OrdersController < ApplicationController
   def create
     @cart_id = session[:cart_id]
     @cart = Orderitem.where(cart_id: @cart_id)
+    card = Card.find_by(user_id: current_user.id)
+    Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
+    charge = Payjp::Charge.create(
+      amount: order_params[:priceSum],
+      customer: card.customer_id,
+      currency: 'jpy',
+      )
     @order = Order.create(order_params)
     @cart.update(order_id: @order.id)
     Cart.destroy(session[:cart_id])
@@ -36,7 +51,7 @@ class OrdersController < ApplicationController
   private
   
   def order_params
-    params.require(:order).permit(:username, :orderitems).merge(user_id: current_user.id)
+    params.require(:order).permit(:username, :orderitems, :priceSum).merge(user_id: current_user.id)
   end
 
   def move_to_index

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 620200131044362) do
+ActiveRecord::Schema.define(version: 620200131044363) do
 
   create_table "cards", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(version: 620200131044362) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "priceSum"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
