@@ -22,6 +22,8 @@
                   %li
                     = link_to "アカウント", edit_user_registration_path(current_user)
                   %li
+                    = link_to "カード情報", user_cards_path(current_user)
+                  %li
                     = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right__nav__logout"
                   - if current_user.admin?
                     %li

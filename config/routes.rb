@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   devise_for :users 
   root to: 'items#index'
   resources :users, only: [:index, :show, :edit, :update] do
-    resources :orders do
-    end
+    resources :orders
+    resources :cards, except: :edit
   end
   resources :orderitems, only: :index
   namespace :adm do
